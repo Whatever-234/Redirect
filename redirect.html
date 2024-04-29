@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirect</title>
+    <script>
+        function redirectToAppStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.itechia.client&hl=en_US';
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = 'https://apps.apple.com/fr/app/taxi-sahbi-client/id1666951216';
+            } else {
+                // Redirect to a generic landing page if the device is not recognized
+                window.location.href = 'https://www.taxisahbiapp.ma';
+            }
+        }
+    </script>
+</head>
+<body onload="redirectToAppStore()">
+    Redirecting...
+</body>
+</html>
